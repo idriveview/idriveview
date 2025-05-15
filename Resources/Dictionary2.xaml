@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Новый стиль для TextBlock с подчёркиванием при наведении -->
+    <Style TargetType="TextBlock" x:Key="UnderlineOnHoverTextBlock">
+        <Setter Property="TextDecorations" Value="None" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="Background" Value="Gainsboro" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!-- Стиль для Border -->
+    <Style TargetType="Border" x:Key="ColorChangeHoveringClose">
+        <Setter Property="Background" Value="Transparent" />
+        <!-- Фон по умолчанию -->
+        <Setter Property="CornerRadius" Value="0,10,0,0" />
+        <!-- Закругление по умолчанию -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Red" />
+                <!-- Фон красный при наведении -->
+                <Setter Property="TextBlock.Foreground" Value="White" />
+                <!-- Текст белый при наведении -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!-- Новый стиль для Border  при наведении -->
+    <Style TargetType="Border" x:Key="ColorChangeHovering">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightCoral" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
