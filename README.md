@@ -17,11 +17,11 @@
 - [Скачать IDriveView.rar](https://github.com/idriveview/idriveview/releases/download/v1.0.2/IDriveView.rar)
 
 *С установкой .Net 8.0 на ПК*
-- [Скачать IDriveViewSetup.exe](https://github.com/idriveview/idriveview/releases/download/v1.0.1/IDriveViewSetup.exe)
-- [Скачать IDriveView.rar](https://github.com/idriveview/idriveview/releases/download/v1.0.1/IDriveView.rar)
+- [Скачать IDriveViewSetup.exe](https://github.com/idriveview/idriveview/releases/download/v.1.0.1/IDriveViewSetup.exe)
+- [Скачать IDriveView.rar](https://github.com/idriveview/idriveview/releases/download/v.1.0.1/IDriveView.rar)
 
 *Для тех, кто скачивает код: этот видеоплеер (папка VideoLAN) закинуть в корень программы*
-- [Скачать VideoLAN.rar](https://github.com/idriveview/idriveview/releases/download/v.1.0.0/VideoLAN.rar)
+- [Скачать VideoLAN.rar](https://github.com/idriveview/idriveview/releases/download/v1.0.0/VideoLAN.rar)
 
 ---
 
