@@ -1,0 +1,123 @@
+﻿<Window x:Class="IDriveView.AddWindows.ContactsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IDriveView.AddWindows"
+        mc:Ignorable="d"  Icon="..\Resources\cloud_40539.png"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Contacts Window" Height="650" MinHeight="350" Width="1050" MinWidth="850">
+    <WindowChrome.WindowChrome >
+        <WindowChrome ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+    <Border Name="nameBorder" Background="{DynamicResource PrimaryHueMidBrush}" BorderBrush="{DynamicResource PrimaryHueMidBrush}">
+        <Border CornerRadius="7" Background="{DynamicResource MaterialDesignPaper}">
+            <DockPanel LastChildFill="True">
+                <!--#region Обработка кастомной шапки окна-->
+                <Border DockPanel.Dock="Top" Name="titlePanel" Background="{DynamicResource PrimaryHueMidBrush}" Height="29" VerticalAlignment="Top">
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Width="150" Height="29" WindowChrome.IsHitTestVisibleInChrome="True" FlowDirection="RightToLeft" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <Border Name="close" Style="{StaticResource borderHead}" PreviewMouseUp="header_PreviewMouseUp"  PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave"  MouseEnter="header_MouseEnter">
+                                <Label Content="✕" Style="{StaticResource labelHead}"/>
+                            </Border>
+                            <Border Name="maxmin" Style="{StaticResource borderHead}" PreviewMouseUp="header_PreviewMouseUp"  PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave"  MouseEnter="header_MouseEnter">
+                                <Label Name="labelMaxmin" Content="&#9744;" Style="{StaticResource labelHead}"/>
+                            </Border>
+                            <Border Name="roll" Style="{StaticResource borderHead}" PreviewMouseUp="header_PreviewMouseUp"  PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave"  MouseEnter="header_MouseEnter">
+                                <Label Content="&#8211;" Style="{StaticResource labelHead}" FontSize="16"/>
+                            </Border>
+                        </StackPanel>
+                        <Border Name="title" Style="{StaticResource borderIconHead}">
+                            <Image Source="..\Resources\cloud_40539.png"/>
+                        </Border>
+                        <Label Content="Contacts Window" Style="{StaticResource labelTitleHead}"/>
+                        <Label Name="pathToElement" Margin="20,4.5,0,0" Style="{StaticResource labelTitleHead}"/>
+                    </DockPanel>
+                </Border>
+                <!--#endregion-->
+                <Grid>
+                <StackPanel Margin="10">
+                    <TextBlock HorizontalAlignment="Center" FontSize="20">Контакты:</TextBlock>
+                    <TextBlock FontSize="16">Сайт:</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="linkSite" IsReadOnly="True" FontSize="16"></TextBox>
+                        <Button x:Name="buttonSite" Margin="20,0,0,0" Style="{StaticResource MaterialDesignFlatButton}" Click="buttonSite_Click">Перейти на сайт приложения</Button>
+                        <Button x:Name="copySile" materialDesign:ButtonAssist.CornerRadius="5" Click="copySile_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Скопировать ссылку на сайт" Margin="5,3,0,3">
+                            <materialDesign:PackIcon Kind="ContentCopy" Width="20" Height="20"/>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock FontSize="16" Margin="0,10,0,0">GitHub:</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="linkGithub" IsReadOnly="True" FontSize="16"></TextBox>
+                        <Button x:Name="buttonGithub" Margin="20,0,0,0" Style="{StaticResource MaterialDesignFlatButton}" Click="buttonGithub_Click">Перейти на GitHUb приложения</Button>
+                        <Button x:Name="copyGithub" materialDesign:ButtonAssist.CornerRadius="5" Click="copyGithub_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Скопировать ссылку на GitHub" Margin="5,3,0,3">
+                            <materialDesign:PackIcon Kind="ContentCopy" Width="20" Height="20"/>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock FontSize="16" Margin="0,10,0,0">YouTube:</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="linkYoutube" IsReadOnly="True" FontSize="16"></TextBox>
+                        <Button x:Name="buttonYoutube" Margin="20,0,0,0" Style="{StaticResource MaterialDesignFlatButton}" Click="buttonYoutube_Click">Перейти на YouTube</Button>
+                        <Button x:Name="copyYoutube" materialDesign:ButtonAssist.CornerRadius="5" Click="copyYoutube_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Скопировать ссылку на YouTube" Margin="5,3,0,3">
+                            <materialDesign:PackIcon Kind="ContentCopy" Width="20" Height="20"/>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock FontSize="16" Margin="0,10,0,0">Почта:</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="linkEmail" IsReadOnly="True" FontSize="16"></TextBox>
+                        <Button x:Name="copyEmail" materialDesign:ButtonAssist.CornerRadius="5" Click="copyEmail_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Скопировать почту" Margin="10,3,0,3">
+                            <materialDesign:PackIcon Kind="ContentCopy" Width="20" Height="20"/>
+                        </Button>
+                    </StackPanel>
+                    <!--<TextBlock HorizontalAlignment="Center" FontSize="20">Сказать спасибо:</TextBlock>
+                    <TextBlock FontSize="16" Margin="0,10,0,0">Кошелёк:</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="wallet" IsReadOnly="True" FontSize="16"></TextBox>
+                        <Button x:Name="copyWallet" materialDesign:ButtonAssist.CornerRadius="5" Click="copyWallet_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Скопировать адрес кошелька" Margin="10,3,0,3">
+                            <materialDesign:PackIcon Kind="ContentCopy" Width="20" Height="20"/>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock Margin="10, 20, 10, 0" TextWrapping="Wrap">
+                    <Run Text="Во избежание недоразумений и подделки, сверяйте адрес кошелька с " />
+                    <Hyperlink x:Name="GitHubLink" RequestNavigate="Hyperlink_RequestNavigate">
+                        <TextBlock Text="GitHub" Foreground="{DynamicResource PrimaryHueMidBrush}"  TextDecorations="Underline" Cursor="Hand">
+                                <TextBlock.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать ссылку" Click="CopyLink_Click" Tag="GitHubLink"/>
+                                    </ContextMenu>
+                                </TextBlock.ContextMenu>
+                        </TextBlock>
+                    </Hyperlink>
+                    <Run Text=" и " />
+                    <Hyperlink x:Name="AppWebsiteLink"  RequestNavigate="Hyperlink_RequestNavigate">
+                        <TextBlock Text="Сайтом приложения" Foreground="{DynamicResource PrimaryHueMidBrush}" TextDecorations="Underline" Cursor="Hand">
+                                <TextBlock.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать ссылку" Click="CopyLink_Click" Tag="AppWebsiteLink"/>
+                                    </ContextMenu>
+                                </TextBlock.ContextMenu>
+                        </TextBlock>
+                    </Hyperlink>
+                    <Run Text="." />
+                </TextBlock>
+                    <TextBlock FontSize="16" Margin="0,20,0,0">Доступные переводы по:</TextBlock>
+                    <TextBox x:Name="svailableTranslations" IsReadOnly="True" Margin="0,10,0,0" Padding="0,0,0,20" FontSize="16"></TextBox>
+                    <Border Height="10" Margin="0,-5,0,0" Background="{DynamicResource MaterialDesignPaper}"></Border>-->
+                </StackPanel>
+                    <materialDesign:Chip x:Name="CopyChip" Content="Скопировано!" Visibility="Collapsed"
+                                 Margin="0,50,50,0" IsDeletable="False" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="14"/>
+                </Grid>
+            </DockPanel>
+        </Border>
+    </Border>
+</Window>

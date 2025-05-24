@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AddWindows\ContactsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddWindows\IDriveVideo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddWindows\LogIn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddWindows\ShowPicturesOne.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddWindows\TextFileWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Debuging\DebugWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

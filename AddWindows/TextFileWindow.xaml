@@ -1,0 +1,54 @@
+﻿<Window x:Class="IDriveView.AddWindows.TextFileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IDriveView.AddWindows"
+        mc:Ignorable="d"  Icon="..\Resources\cloud_40539.png"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="IDriveText" Height="650" MinHeight="250" Width="1050" MinWidth="250" Closing="Window_Closing" PreviewKeyDown="Window_PreviewKeyDown">
+    <WindowChrome.WindowChrome >
+        <WindowChrome ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+    <Border Name="nameBorder" Background="{DynamicResource PrimaryHueMidBrush}" BorderBrush="{DynamicResource PrimaryHueMidBrush}">
+        <Border CornerRadius="7" Background="{DynamicResource MaterialDesignPaper}">
+            <DockPanel LastChildFill="True">
+                <!--#region Обработка кастомной шапки окна-->
+                <Border DockPanel.Dock="Top" Name="titlePanel" Background="{DynamicResource PrimaryHueMidBrush}" Height="29" VerticalAlignment="Top">
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Width="150" Height="29" WindowChrome.IsHitTestVisibleInChrome="True" FlowDirection="RightToLeft" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <Border Name="close" Style="{StaticResource borderHead}" PreviewMouseUp="header_PreviewMouseUp"  PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave"  MouseEnter="header_MouseEnter">
+                                <Label Content="✕" Style="{StaticResource labelHead}"/>
+                            </Border>
+                            <Border Name="maxmin" Style="{StaticResource borderHead}" PreviewMouseUp="header_PreviewMouseUp"  PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave"  MouseEnter="header_MouseEnter">
+                                <Label Name="labelMaxmin" Content="&#9744;" Style="{StaticResource labelHead}"/>
+                            </Border>
+                            <Border Name="roll" Style="{StaticResource borderHead}" PreviewMouseUp="header_PreviewMouseUp"  PreviewMouseDown="header_PreviewMouseDown" MouseLeave="header_MouseLeave"  MouseEnter="header_MouseEnter">
+                                <Label Content="&#8211;" Style="{StaticResource labelHead}" FontSize="16"/>
+                            </Border>
+                        </StackPanel>
+                        <Border Name="title" Style="{StaticResource borderIconHead}">
+                            <Image Source="..\Resources\cloud_40539.png"/>
+                        </Border>
+                        <Label Content="IDriveText" Style="{StaticResource labelTitleHead}"/>
+                        <TextBox Name="nameFile" Text="Имя файла" IsReadOnly="True" Foreground="White" Margin="25,5,0,0"/>
+                    </DockPanel>
+                </Border>
+                <!--#endregion-->
+                <Grid x:Name="gridContent">
+                        <TextBox x:Name="textBox" FontSize="16" Margin="10" AcceptsReturn="True" TextWrapping="Wrap" PreviewKeyDown="TextBox_PreviewKeyDown"
+                                 TextChanged="textBox_TextChanged" VerticalScrollBarVisibility="Auto"/>
+                    </Grid>
+            </DockPanel>
+        </Border>
+    </Border>
+        <Button x:Name="saveText" Width="90" Height="29" Margin="40,0" Content="Сохранить" Style="{StaticResource MaterialDesignFlatLightBgButton}" WindowChrome.IsHitTestVisibleInChrome="True" Click="saveButton_Click" 
+            ToolTip="Сохранить изменения Ctrl+S" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed" Padding="0,5,0,0"/>
+    </Grid>
+</Window>
